@@ -50,7 +50,7 @@
         /// <summary>
         /// 设置计时模式枚举
         /// </summary>
-        public enum timer_mode { 正常模式 = 0, 智能计时 = 1, 加班模式 = 2, 游戏模式 = 3 }
+        public enum timer_mode { 正常模式 = 0, 智能计时 = 1, 加班模式 = 2, 游戏模式 = 3, 搬砖模式 = 4 }
 
         /// <summary>
         /// 计时模式

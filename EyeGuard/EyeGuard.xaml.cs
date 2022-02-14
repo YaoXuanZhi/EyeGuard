@@ -468,18 +468,14 @@ namespace EyeGuard
                 }
             }
 
-            //正常模式 = 0, 智能计时 = 1, 加班模式 = 2, 游戏模式 = 3
-            switch ((int)md.TimerMode)
+            switch (md.TimerMode)
             {
-                //正常模式
-                case 0:
+                case timer_mode.正常模式:
                     {
                         Count++;
                         break;
                     }
-
-                //重写智能计时
-                case 1:
+                case timer_mode.智能计时:
                     {
                         //判断是否全屏
                         if (!bll.FullScreen()) //非全屏
@@ -514,16 +510,13 @@ namespace EyeGuard
                         
                         break;
                     }
-                //加班模式
-                case 2:
+                case timer_mode.加班模式:
                     {
                         Count++;
                         break;
                     }
-                //游戏模式
-                case 3:
+                case timer_mode.游戏模式:
                     {
-
                         //如果不处于空闲时间
                         if (Bll.GetLastInputTime() < 1000)
                         {
@@ -556,7 +549,11 @@ namespace EyeGuard
                         }
                         break;
                     }
-
+                case timer_mode.搬砖模式:
+                {
+                    Count++;
+                    break;
+                }
             }
 
             if (md.Work * 60 >= Count)
